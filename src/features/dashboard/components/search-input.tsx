@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,7 @@ export const SearchInput = () => {
     const router = useRouter();
     const [value, setValue] = useState("");
     const [debounceValue, setDebounceValue] = useDebounceValue("", 500);
+    const favorite = useSearchParams().get("favorite");
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
@@ -26,13 +27,14 @@ export const SearchInput = () => {
                 url: "/",
                 query: {
                     search: debounceValue,
+                    favorite,
                 },
             },
             { skipEmptyString: true, skipNull: true },
         );
 
         router.push(url);
-    }, [router, debounceValue]);
+    }, [router, debounceValue, favorite]);
 
     return (
         <div className="relative w-full">
@@ -41,6 +43,7 @@ export const SearchInput = () => {
                 className="w-full max-w-[516px] pl-9"
                 placeholder="Search boards"
                 onChange={onChange}
+                value={value}
             />
         </div>
     );
