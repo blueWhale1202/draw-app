@@ -70,6 +70,19 @@ export const get = query({
     },
 });
 
+export const getById = query({
+    args: { id: v.id("boards") },
+    handler: async (ctx, { id }) => {
+        const board = await ctx.db.get(id);
+
+        if (!board) {
+            throw new Error("Board not found");
+        }
+
+        return board;
+    },
+});
+
 export const create = mutation({
     args: {
         orgId: v.string(),

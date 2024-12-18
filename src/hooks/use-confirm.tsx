@@ -9,7 +9,6 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog";
 
 type State = {
@@ -43,7 +42,6 @@ export const useConfirm = (
 
     const ConfirmDialog = () => (
         <Dialog open={promise !== null} onOpenChange={handleClose}>
-            <DialogTrigger>Open</DialogTrigger>
             <DialogContent onClick={(e) => e.stopPropagation()}>
                 <DialogHeader>
                     <DialogTitle>{title}</DialogTitle>
