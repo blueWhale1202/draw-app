@@ -1,6 +1,6 @@
 "use client";
 
-import { RenameModal } from "@/features/dashboard/components/rename-modal";
+import { RenameModal } from "@/features/boards/components/rename-modal";
 import { useIsClient } from "usehooks-ts";
 
 export const Modals = () => {

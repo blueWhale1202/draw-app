@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Overlay } from "./overlay";
+import { useAuth } from "@clerk/nextjs";
+import { formatDistanceToNow } from "date-fns";
+import { Id } from "../../../../convex/_generated/dataModel";
 
 import { Actions } from "@/components/actions";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useAuth } from "@clerk/nextjs";
-import { formatDistanceToNow } from "date-fns";
+
 import { MoreHorizontal } from "lucide-react";
 import { CardFooter } from "./card-footer";
+import { Overlay } from "./overlay";
+
+import { useFavoriteBoard } from "../api/use-favorite-board";
+import { useUnFavoriteBoard } from "../api/use-unfavorite-board";
 
 type Props = {
     id: string;
@@ -36,6 +41,20 @@ export const BoardCard = ({
     const authorLabel = authorId === userId ? "You" : authorName;
     const createdAtLabel = formatDistanceToNow(createdAt, { addSuffix: true });
 
+    const favorite = useFavoriteBoard();
+    const unfavorite = useUnFavoriteBoard();
+
+    const isPending = favorite.isPending || unfavorite.isPending;
+
+    const onToggleFavorite = () => {
+        const boardId = id as Id<"boards">;
+        if (isFavorite) {
+            unfavorite.mutate({ id: boardId });
+        } else {
+            favorite.mutate({ id: boardId, orgId });
+        }
+    };
+
     return (
         <Link href={`/board/${id}`}>
             <div className="group flex aspect-[100/127] flex-col justify-between overflow-hidden rounded-lg border">
@@ -58,8 +77,8 @@ export const BoardCard = ({
                     title={title}
                     authorLabel={authorLabel}
                     createdAtLabel={createdAtLabel}
-                    disabled={false}
-                    onClick={() => {}}
+                    disabled={isPending}
+                    onClick={onToggleFavorite}
                 />
             </div>
         </Link>

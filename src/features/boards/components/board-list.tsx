@@ -1,10 +1,12 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { useGetBoards } from "../api/use-get-boards";
+
 import { BoardCard, BoardCardSkeleton } from "./board-card";
 import { EmptyBoards } from "./empty-boards";
 import { EmptyFavorites } from "./empty-favorites";
 import { EmptySearch } from "./empty-search";
 import { NewBoardButton } from "./new-board-button";
+
+import { useGetBoards } from "../api/use-get-boards";
 
 type Props = {
     orgId: string;
@@ -15,7 +17,7 @@ type Props = {
 };
 
 export const BoardList = ({ orgId, query: { favorite, search } }: Props) => {
-    const { data, isPending } = useGetBoards(orgId);
+    const { data, isPending } = useGetBoards(orgId, search, favorite);
 
     if (isPending) {
         return (
@@ -62,7 +64,7 @@ export const BoardList = ({ orgId, query: { favorite, search } }: Props) => {
                         imageUrl={board.imageUrl}
                         orgId={board.orgId}
                         createdAt={board._creationTime}
-                        isFavorite={false}
+                        isFavorite={board.isFavorite}
                     />
                 ))}
             </div>

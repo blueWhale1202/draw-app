@@ -17,21 +17,56 @@ const IMAGES = [
 export const get = query({
     args: {
         orgId: v.string(),
+        search: v.optional(v.string()),
+        favorite: v.optional(v.string()),
     },
-    handler: async (ctx, { orgId }) => {
+    handler: async (ctx, { orgId, search, favorite }) => {
         const identity = await ctx.auth.getUserIdentity();
 
         if (!identity) {
             throw new Error("Unauthorized");
         }
 
-        const boards = await ctx.db
-            .query("boards")
-            .withIndex("by_org", (q) => q.eq("orgId", orgId))
-            .order("desc")
-            .collect();
+        const title = search as string;
+        let boards = [];
 
-        return boards;
+        if (title) {
+            boards = await ctx.db
+                .query("boards")
+                .withSearchIndex("search_title", (q) =>
+                    q.search("title", title).eq("orgId", orgId),
+                )
+                .collect();
+        } else {
+            boards = await ctx.db
+                .query("boards")
+                .withIndex("by_org", (q) => q.eq("orgId", orgId))
+                .order("desc")
+                .collect();
+        }
+
+        const boardsWithFavorites = await Promise.all(
+            boards.map(async (board) => {
+                return ctx.db
+                    .query("userFavorites")
+                    .withIndex("by_user_board", (q) =>
+                        q
+                            .eq("userId", identity.subject)
+                            .eq("boardId", board._id),
+                    )
+                    .unique()
+                    .then((favorite) => ({
+                        ...board,
+                        isFavorite: !!favorite,
+                    }));
+            }),
+        );
+
+        if (favorite) {
+            return boardsWithFavorites.filter((board) => board.isFavorite);
+        }
+
+        return boardsWithFavorites;
     },
 });
 
@@ -100,6 +135,18 @@ export const remove = mutation({
             throw new Error("Unauthorized");
         }
 
+        const userId = identity.subject;
+        const existingFavorite = await ctx.db
+            .query("userFavorites")
+            .withIndex("by_user_board", (q) =>
+                q.eq("userId", userId).eq("boardId", id),
+            )
+            .unique();
+
+        if (existingFavorite) {
+            await ctx.db.delete(existingFavorite._id);
+        }
+
         await ctx.db.delete(id);
     },
 });
@@ -125,7 +172,8 @@ export const favorite = mutation({
             .query("userFavorites")
             .withIndex("by_user_board_org", (q) =>
                 q.eq("userId", userId).eq("boardId", id).eq("orgId", orgId),
-            );
+            )
+            .unique();
 
         if (existingFavorite) {
             throw new Error("Already favorited");

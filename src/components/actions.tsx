@@ -6,7 +6,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useRemoveBoard } from "@/features/dashboard/api/use-remove-board";
+import { useRemoveBoard } from "@/features/boards/api/use-remove-board";
 import { useConfirm } from "@/hooks/use-confirm";
 import { useRenameModal } from "@/stores/use-rename-modal";
 import { Link2Icon, Pencil, Trash } from "lucide-react";

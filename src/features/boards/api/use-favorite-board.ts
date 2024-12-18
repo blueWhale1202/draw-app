@@ -3,15 +3,13 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { api } from "../../../../convex/_generated/api";
 
-export const useCreateBoard = () => {
+export const useFavoriteBoard = () => {
     const mutation = useMutation({
-        mutationFn: useConvexMutation(api.board.create),
-        onSuccess: () => {
-            toast.success("Board created");
-        },
+        mutationFn: useConvexMutation(api.board.favorite),
+
         onError: (error) => {
-            console.log("🚀 ~ useCreateBoard ~ error:", error);
-            toast.error("Failed to create board");
+            console.log("🚀 ~ useFavoriteBoard ~ error:", error);
+            toast.error("Failed to favorite board");
         },
     });
 

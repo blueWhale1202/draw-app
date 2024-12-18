@@ -18,6 +18,11 @@ export const CardFooter = ({
     disabled,
     onClick,
 }: Props) => {
+    const handleFavorite = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        e.preventDefault();
+        onClick();
+    };
     return (
         <div className="relative bg-white p-3">
             <p className="max-w-[calc(100%-20px)] truncate text-sm">{title}</p>
@@ -30,7 +35,7 @@ export const CardFooter = ({
                     disabled && "cursor-not-allowed opacity-75",
                 )}
                 disabled={disabled}
-                onClick={onClick}
+                onClick={handleFavorite}
             >
                 <Star
                     className={cn(

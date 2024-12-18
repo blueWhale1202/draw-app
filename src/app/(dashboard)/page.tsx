@@ -3,8 +3,8 @@
 import {
     BoardList,
     BoardListSkeleton,
-} from "@/features/dashboard/components/board-list";
-import { EmptyOrg } from "@/features/dashboard/components/empty-org";
+} from "@/features/boards/components/board-list";
+import { EmptyOrg } from "@/features/boards/components/empty-org";
 import { useOrganization } from "@clerk/nextjs";
 
 type Props = {
