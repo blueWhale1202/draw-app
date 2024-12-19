@@ -64,6 +64,7 @@ export const {
     useOthersConnectionIds,
     useOther,
     useMutation,
+    useOthersMapped,
 
     // Other hooks
     // ...

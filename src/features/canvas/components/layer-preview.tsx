@@ -2,7 +2,10 @@
 
 import { LayerType } from "@/types/canvas";
 import { useStorage } from "../../../../liveblocks.config";
+import { Ellipse } from "./ellipse";
+import { Note } from "./note";
 import { Rectangle } from "./rectangle";
+import { Text } from "./text";
 
 type Props = {
     id: string;
@@ -22,6 +25,36 @@ export const LayerPreview = ({
     }
 
     switch (layer.type) {
+        case LayerType.Text: {
+            return (
+                <Text
+                    id={id}
+                    layer={layer}
+                    onPointerDown={onLayerPointerDown}
+                    selectionColor={selectionColor}
+                />
+            );
+        }
+        case LayerType.Note: {
+            return (
+                <Note
+                    id={id}
+                    layer={layer}
+                    onPointerDown={onLayerPointerDown}
+                    selectionColor={selectionColor}
+                />
+            );
+        }
+        case LayerType.Ellipse: {
+            return (
+                <Ellipse
+                    id={id}
+                    layer={layer}
+                    onPointerDown={onLayerPointerDown}
+                    selectionColor={selectionColor}
+                />
+            );
+        }
         case LayerType.Rectangle: {
             return (
                 <Rectangle

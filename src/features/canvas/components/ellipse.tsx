@@ -1,14 +1,14 @@
 import { colorToCss } from "@/lib/utils";
-import { RectangleLayer } from "@/types/canvas";
+import { EllipseLayer } from "@/types/canvas";
 
 type Props = {
     id: string;
-    layer: RectangleLayer;
+    layer: EllipseLayer;
     onPointerDown: (e: React.PointerEvent, id: string) => void;
     selectionColor?: string;
 };
 
-export const Rectangle = ({
+export const Ellipse = ({
     id,
     layer,
     onPointerDown,
@@ -17,17 +17,16 @@ export const Rectangle = ({
     const { x, y, width, height, fill } = layer;
 
     return (
-        <rect
-            className="drop-shadow-md"
-            onPointerDown={(e) => onPointerDown(e, id)}
-            style={{ transform: `translate(${x}px, ${y}px)` }}
-            x={0}
-            y={0}
-            width={width}
-            height={height}
-            strokeWidth={1}
+        <ellipse
+            cx={width / 2}
+            cy={height / 2}
+            rx={width / 2}
+            ry={height / 2}
             fill={fill ? colorToCss(fill) : "#3b82f6"}
             stroke={selectionColor || "transparent"}
+            strokeWidth={1}
+            style={{ transform: `translate(${x}px, ${y}px)` }}
+            onPointerDown={(e) => onPointerDown(e, id)}
         />
     );
 };
