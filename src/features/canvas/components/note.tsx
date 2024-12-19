@@ -52,7 +52,7 @@ export const Note = ({ id, layer, onPointerDown, selectionColor }: Props) => {
                 outline: selectionColor
                     ? `1px solid ${selectionColor}`
                     : "none",
-                backgroundColor: fill ? colorToCss(fill) : "#3b82f6",
+                backgroundColor: fill ? colorToCss(fill) : "#fff9b1",
             }}
         >
             <ContentEditable

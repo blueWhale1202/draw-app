@@ -19,6 +19,8 @@ export const Room = ({ roomId, children, fallback }: Props) => {
             initialPresence={{
                 cursor: null,
                 selection: [],
+                pencilDraft: null,
+                penColor: null,
             }}
             initialStorage={{
                 layers: new LiveMap<string, LiveObject<Layer>>(),

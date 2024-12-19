@@ -1,4 +1,4 @@
-import { Layer, Point } from "@/types/canvas";
+import { Color, Layer, Point } from "@/types/canvas";
 import {
     createClient,
     LiveList,
@@ -18,6 +18,8 @@ const client = createClient({
 type Presence = {
     cursor: Point | null;
     selection: string[];
+    pencilDraft: [x: number, y: number, pressure: number][] | null;
+    penColor: Color | null;
 };
 
 // Optionally, Storage represents the shared document that persists in the
