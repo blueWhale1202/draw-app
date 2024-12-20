@@ -4,7 +4,7 @@ import { useMutation } from "@liveblocks/react/suspense";
 export const useStartDrawing = (lastUsedColor: Color) => {
     return useMutation(
         ({ setMyPresence }, point: Point, pressure: number) => {
-            console.log("startDrawing");
+            // console.log("startDrawing");
 
             setMyPresence({
                 pencilDraft: [[point.x, point.y, pressure]],
@@ -24,7 +24,7 @@ export const useContinueDrawing = (mode: CanvasMode) => {
                 return;
             }
 
-            console.log("continueDrawing");
+            // console.log("continueDrawing");
 
             setMyPresence({
                 cursor: point,

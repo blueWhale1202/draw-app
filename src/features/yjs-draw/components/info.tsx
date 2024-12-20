@@ -24,7 +24,7 @@ type Props = {
 
 export const Info = ({ boardId }: Props) => {
     return (
-        <div className="absolute bottom-2 right-2 z-[99] flex h-12 items-center rounded-md bg-white px-1.5 shadow-xl">
+        <div className="absolute bottom-1 right-1 z-[99] flex h-12 items-center rounded-md bg-white px-1.5 shadow-md">
             <Hint label="Go to board" side="top" sideOffset={10}>
                 <Button
                     variant="board"

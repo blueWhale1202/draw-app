@@ -27,7 +27,7 @@ export const useInsertPath = ({ lastUsedColor, setCanvasState }: Props) => {
                 return;
             }
 
-            console.log("insertPath");
+            // console.log("insertPath");
 
             const id = nanoid();
             liveLayers.set(

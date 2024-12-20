@@ -10,7 +10,7 @@ export const useHideMark = () => {
             if (mark) {
                 mark.style.display = "none";
             }
-        }, 50);
+        }, 1000);
         return () => {
             clearTimeout(id);
         };

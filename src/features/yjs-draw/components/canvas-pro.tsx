@@ -5,11 +5,12 @@ import "tldraw/tldraw.css";
 import { useSelf } from "@liveblocks/react/suspense";
 import { DefaultStylePanel, Tldraw } from "tldraw";
 
-import { useHideMark } from "../hooks/use-hide-mark";
 import { useYjsStore } from "../hooks/use-yjs-store";
 
 import { Info } from "./info";
 import { Participant } from "./participant";
+
+import { useHideMark } from "../hooks/use-hide-mark";
 
 type Props = {
     boardId: string;
