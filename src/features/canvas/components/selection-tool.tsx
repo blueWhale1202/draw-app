@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { useDeleteLayers } from "@/hooks/use-delete-layers";
 import { useSelectionBounds } from "@/hooks/use-selection-bounds";
 import { Camera, Color } from "@/types/canvas";
+import { useMutation, useSelf } from "@liveblocks/react/suspense";
 import { BringToFront, SendToBack, Trash2 } from "lucide-react";
 import { memo } from "react";
-import { useMutation, useSelf } from "../../../../liveblocks.config";
 import { ColorPicker } from "./color-picker";
 
 type Props = {

@@ -2,7 +2,7 @@
 
 import { colorToCss } from "@/lib/utils";
 import { LayerType } from "@/types/canvas";
-import { useStorage } from "../../../../liveblocks.config";
+import { useStorage } from "@liveblocks/react/suspense";
 import { Ellipse } from "./ellipse";
 import { Note } from "./note";
 import { Path } from "./path";

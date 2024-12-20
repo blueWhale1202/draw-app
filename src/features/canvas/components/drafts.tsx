@@ -1,6 +1,6 @@
 import { colorToCss } from "@/lib/utils";
 import { shallow } from "@liveblocks/client";
-import { useOthersMapped } from "../../../../liveblocks.config";
+import { useOthersMapped } from "@liveblocks/react/suspense";
 import { Path } from "./path";
 
 export const Drafts = () => {

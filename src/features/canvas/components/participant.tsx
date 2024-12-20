@@ -1,7 +1,7 @@
 "use client";
 
 import { Skeleton } from "@/components/ui/skeleton";
-import { useOthers, useSelf } from "../../../../liveblocks.config";
+import { useOthers, useSelf } from "@liveblocks/react/suspense";
 import { UserAvatar } from "./user-avatar";
 
 const MAX_SHOWN_PARTICIPANTS = 1;

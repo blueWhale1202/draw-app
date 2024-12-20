@@ -2,8 +2,8 @@
 
 import { useSelectionBounds } from "@/hooks/use-selection-bounds";
 import { LayerType, Side, XYWH } from "@/types/canvas";
+import { useSelf, useStorage } from "@liveblocks/react/suspense";
 import { memo } from "react";
-import { useSelf, useStorage } from "../../../../liveblocks.config";
 
 const HANDLE_WIDTH = 8;
 

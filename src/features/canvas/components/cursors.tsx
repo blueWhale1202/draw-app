@@ -1,4 +1,4 @@
-import { useOthersConnectionIds } from "../../../../liveblocks.config";
+import { useOthersConnectionIds } from "@liveblocks/react/suspense";
 import { Cursor } from "./cursor";
 
 export const Cursors = () => {

@@ -23,6 +23,7 @@ import {
 import { LiveObject } from "@liveblocks/client";
 import { nanoid } from "nanoid";
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
     useCanRedo,
     useCanUndo,
@@ -31,7 +32,7 @@ import {
     useOthersMapped,
     useSelf,
     useStorage,
-} from "../../../../liveblocks.config";
+} from "@liveblocks/react/suspense";
 import { CursorsPresence } from "./cursors-presence";
 import { Info } from "./info";
 import { LayerPreview } from "./layer-preview";
@@ -196,11 +197,11 @@ export const Canvas = ({ boardId }: Props) => {
 
     const continueDrawing = useMutation(
         ({ self, setMyPresence }, point: Point, e: React.PointerEvent) => {
+            console.log("🚀 ~ Canvas ~ e:", e.button);
             const { pencilDraft } = self.presence;
 
             if (
                 canvasState.mode !== CanvasMode.Pencil ||
-                // e.button !== 1 ||
                 pencilDraft === null
             ) {
                 return;
