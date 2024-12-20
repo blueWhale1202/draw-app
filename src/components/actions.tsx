@@ -4,12 +4,14 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
+    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRemoveBoard } from "@/features/boards/api/use-remove-board";
 import { useConfirm } from "@/hooks/use-confirm";
 import { useRenameModal } from "@/stores/use-rename-modal";
-import { Link2Icon, Pencil, Trash } from "lucide-react";
+import { Gem, Link2Icon, Pencil, Trash } from "lucide-react";
+import Link from "next/link";
 import { toast } from "sonner";
 import { Id } from "../../convex/_generated/dataModel";
 
@@ -88,6 +90,17 @@ export const Actions = ({
                     >
                         <Trash />
                         Delete
+                    </DropdownMenuItem>
+
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild className="cursor-pointer p-3">
+                        <Link
+                            href={`/board/${id}/premium`}
+                            className="text-amber-600 hover:!text-amber-500"
+                        >
+                            <Gem />
+                            Premium
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

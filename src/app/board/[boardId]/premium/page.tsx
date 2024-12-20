@@ -1,9 +1,6 @@
-"use client";
-
 import { Room } from "@/components/room";
-
-import { Canvas } from "@/features/canvas/components/canvas";
 import { RoomLoading } from "@/features/canvas/components/room-loading";
+import { CanvasPro } from "@/features/yjs-draw/components/canvas-pro";
 
 type Props = {
     params: {
@@ -11,14 +8,12 @@ type Props = {
     };
 };
 
-const BoardPage = ({ params }: Props) => {
+export default function PremiumPage({ params }: Props) {
     const { boardId } = params;
 
     return (
         <Room roomId={boardId} fallback={<RoomLoading />}>
-            <Canvas boardId={boardId} />
+            <CanvasPro boardId={boardId} />
         </Room>
     );
-};
-
-export default BoardPage;
+}

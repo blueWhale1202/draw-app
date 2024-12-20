@@ -20,10 +20,12 @@ export const Room = ({ roomId, children, fallback }: Props) => {
                 selection: [],
                 pencilDraft: null,
                 penColor: null,
+                presence: undefined,
             }}
             initialStorage={{
                 layers: new LiveMap<string, LiveObject<Layer>>(),
                 layerIds: new LiveList([]),
+                records: new LiveMap(),
             }}
         >
             <ClientSideSuspense fallback={fallback}>

@@ -1,7 +1,7 @@
 import { useOthersMapped } from "@liveblocks/react/suspense";
 
-import { colorToCss } from "@/lib/utils";
 import { shallow } from "@liveblocks/client";
+import { colorToCss } from "../lib/utils";
 
 import { Path } from "./path";
 

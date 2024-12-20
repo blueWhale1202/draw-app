@@ -1,7 +1,7 @@
 import { CanvasMode, CanvasState, Point } from "@/types";
 import { useMutation } from "@liveblocks/react/suspense";
 
-import { findIntersectingLayersWithRectangle } from "@/lib/utils";
+import { findIntersectingLayersWithRectangle } from "../lib/utils";
 
 type Props = {
     layerIds: readonly string[];

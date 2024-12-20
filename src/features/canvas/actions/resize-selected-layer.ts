@@ -1,7 +1,7 @@
 import { CanvasMode, CanvasState, Point } from "@/types";
 
-import { resizeBounds } from "@/lib/utils";
 import { useMutation } from "@liveblocks/react/suspense";
+import { resizeBounds } from "../lib/utils";
 
 export const useResizeSelectedLayer = (canvasState: CanvasState) => {
     return useMutation(

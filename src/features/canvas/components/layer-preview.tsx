@@ -8,8 +8,8 @@ import { Path } from "./path";
 import { Rectangle } from "./rectangle";
 import { Text } from "./text";
 
-import { colorToCss } from "@/lib/utils";
 import { useStorage } from "@liveblocks/react/suspense";
+import { colorToCss } from "../lib/utils";
 
 type Props = {
     id: string;

@@ -3,7 +3,7 @@
 import { MAX_SHOWN_PARTICIPANTS } from "../constant";
 
 import { Skeleton } from "@/components/ui/skeleton";
-import { UserAvatar } from "./user-avatar";
+import { UserAvatar } from "../../../components/user-avatar";
 
 import { useOthers, useSelf } from "@liveblocks/react/suspense";
 
