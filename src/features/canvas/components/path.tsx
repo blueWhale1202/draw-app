@@ -1,5 +1,5 @@
-import { getSvgPathFromStroke } from "@/lib/utils";
 import { getStroke } from "perfect-freehand";
+import { getSvgPathFromStroke } from "../lib/utils";
 
 type Props = {
     x: number;

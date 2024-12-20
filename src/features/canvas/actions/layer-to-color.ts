@@ -1,7 +1,7 @@
 import { useOthersMapped } from "@liveblocks/react/suspense";
 import { useMemo } from "react";
 
-import { connectionIdToColor } from "@/lib/utils";
+import { connectionIdToColor } from "../lib/utils";
 
 export const useLayerIdsToColorSelection = () => {
     const selections = useOthersMapped((other) => other.presence.selection);

@@ -1,9 +1,9 @@
+import { useOther } from "@liveblocks/react/suspense";
 import { memo } from "react";
 
 import { MousePointer2 } from "lucide-react";
 
-import { connectionIdToColor } from "@/lib/utils";
-import { useOther } from "@liveblocks/react/suspense";
+import { connectionIdToColor } from "../lib/utils";
 
 type Props = {
     connectionId: number;

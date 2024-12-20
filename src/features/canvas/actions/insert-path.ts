@@ -4,8 +4,8 @@ import { LiveObject } from "@liveblocks/client";
 import { useMutation } from "@liveblocks/react/suspense";
 import { nanoid } from "nanoid";
 
-import { penPointsToPathLayer } from "@/lib/utils";
 import { MAX_LAYERS } from "../constant";
+import { penPointsToPathLayer } from "../lib/utils";
 
 type Props = {
     lastUsedColor: Color;

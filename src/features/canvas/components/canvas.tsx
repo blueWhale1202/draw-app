@@ -40,7 +40,7 @@ import { SelectionTool } from "./selection-tool";
 import { Toolbar } from "./toolbar";
 
 import { useDisableScrollBounce } from "@/hooks/use-disable-scroll-bounce";
-import { colorToCss, pointerEventToCanvasPoint } from "@/lib/utils";
+import { colorToCss, pointerEventToCanvasPoint } from "../lib/utils";
 
 type Props = {
     boardId: string;

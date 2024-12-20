@@ -3,12 +3,12 @@ import { NoteLayer } from "@/types";
 import { useMutation } from "@liveblocks/react/suspense";
 import { Kalam } from "next/font/google";
 
+import { cn } from "@/lib/utils";
 import {
     calculateFontSize,
-    cn,
     colorToCss,
     getContrastingTextColor,
-} from "@/lib/utils";
+} from "../lib/utils";
 
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
 
