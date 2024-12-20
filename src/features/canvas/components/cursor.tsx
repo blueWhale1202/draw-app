@@ -1,7 +1,9 @@
-import { connectionIdToColor } from "@/lib/utils";
-import { MousePointer2 } from "lucide-react";
 import { memo } from "react";
-import { useOther } from "../../../../liveblocks.config";
+
+import { MousePointer2 } from "lucide-react";
+
+import { connectionIdToColor } from "@/lib/utils";
+import { useOther } from "@liveblocks/react/suspense";
 
 type Props = {
     connectionId: number;

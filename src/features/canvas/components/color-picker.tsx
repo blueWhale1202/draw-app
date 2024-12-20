@@ -1,4 +1,4 @@
-import { Color } from "@/types/canvas";
+import { Color } from "@/types";
 import { ColorButton } from "./color-button";
 
 type Props = {

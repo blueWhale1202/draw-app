@@ -7,10 +7,12 @@ import {
     Point,
     Side,
     XYWH,
-} from "@/types/canvas";
+} from "@/types";
+
 import { clsx, type ClassValue } from "clsx";
-import fontColorContrast from "font-color-contrast";
 import { twMerge } from "tailwind-merge";
+
+import fontColorContrast from "font-color-contrast";
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));

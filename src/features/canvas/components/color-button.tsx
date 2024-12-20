@@ -1,5 +1,5 @@
 import { colorToCss } from "@/lib/utils";
-import { Color } from "@/types/canvas";
+import { Color } from "@/types";
 
 type Props = {
     color: Color;

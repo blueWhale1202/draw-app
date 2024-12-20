@@ -1,8 +1,10 @@
-import { calculateFontSize, cn, colorToCss } from "@/lib/utils";
-import { TextLayer } from "@/types/canvas";
+import { TextLayer } from "@/types";
+
+import { useMutation } from "@liveblocks/react/suspense";
 import { Kalam } from "next/font/google";
+
+import { calculateFontSize, cn, colorToCss } from "@/lib/utils";
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
-import { useMutation } from "../../../../liveblocks.config";
 
 const font = Kalam({
     subsets: ["latin"],

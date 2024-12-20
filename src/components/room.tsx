@@ -1,10 +1,9 @@
 "use client";
 
-import { Layer } from "@/types/canvas";
+import { Layer } from "@/types";
 import { LiveList, LiveMap, LiveObject } from "@liveblocks/client";
-import { ClientSideSuspense } from "@liveblocks/react";
+import { ClientSideSuspense, RoomProvider } from "@liveblocks/react";
 import { ReactNode } from "react";
-import { RoomProvider } from "../../liveblocks.config";
 
 type Props = {
     children: ReactNode;
@@ -28,7 +27,7 @@ export const Room = ({ roomId, children, fallback }: Props) => {
             }}
         >
             <ClientSideSuspense fallback={fallback}>
-                {() => children}
+                {children}
             </ClientSideSuspense>
         </RoomProvider>
     );

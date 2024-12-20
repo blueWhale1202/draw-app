@@ -1,6 +1,7 @@
 "use client";
 
 import { memo } from "react";
+
 import { Cursors } from "./cursors";
 import { Drafts } from "./drafts";
 

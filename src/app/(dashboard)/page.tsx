@@ -5,6 +5,7 @@ import {
     BoardListSkeleton,
 } from "@/features/boards/components/board-list";
 import { EmptyOrg } from "@/features/boards/components/empty-org";
+
 import { useOrganization } from "@clerk/nextjs";
 
 type Props = {

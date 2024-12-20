@@ -1,5 +1,5 @@
 import { colorToCss } from "@/lib/utils";
-import { EllipseLayer } from "@/types/canvas";
+import { EllipseLayer } from "@/types";
 
 type Props = {
     id: string;

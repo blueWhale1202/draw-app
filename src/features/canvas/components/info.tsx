@@ -2,6 +2,7 @@
 
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,11 +10,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Actions } from "@/components/actions";
 import { Hint } from "@/components/hint";
 import { TabSeparator } from "@/components/tab-separator";
-import { useGetBoard } from "@/features/boards/api/use-get-board";
+
 import { cn } from "@/lib/utils";
-import { useRenameModal } from "@/stores/use-rename-modal";
 import { Menu } from "lucide-react";
-import Link from "next/link";
+
+import { useGetBoard } from "@/features/boards/api/use-get-board";
+import { useRenameModal } from "@/stores/use-rename-modal";
 
 type Props = {
     boardId: string;
