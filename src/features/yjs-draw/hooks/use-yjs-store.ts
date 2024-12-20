@@ -262,6 +262,7 @@ export function useYjsStore({
             unsubs.forEach((fn) => fn());
             unsubs.length = 0;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [yProvider, yDoc, store, yStore]);
 
     return storeWithStatus;
