@@ -1,6 +1,6 @@
 "use client";
 
-import { Layer } from "@/types/canvas";
+import { Layer } from "@/types";
 import { LiveList, LiveMap, LiveObject } from "@liveblocks/client";
 import { ClientSideSuspense, RoomProvider } from "@liveblocks/react";
 import { ReactNode } from "react";

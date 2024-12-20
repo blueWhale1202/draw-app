@@ -1,10 +1,11 @@
 "use client";
 
+import { MAX_SHOWN_PARTICIPANTS } from "../constant";
+
 import { Skeleton } from "@/components/ui/skeleton";
-import { useOthers, useSelf } from "@liveblocks/react/suspense";
 import { UserAvatar } from "./user-avatar";
 
-const MAX_SHOWN_PARTICIPANTS = 1;
+import { useOthers, useSelf } from "@liveblocks/react/suspense";
 
 export const Participant = () => {
     const users = useOthers();

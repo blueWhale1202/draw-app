@@ -1,9 +1,11 @@
 "use client";
 
-import { useSelectionBounds } from "@/hooks/use-selection-bounds";
-import { LayerType, Side, XYWH } from "@/types/canvas";
-import { useSelf, useStorage } from "@liveblocks/react/suspense";
+import { LayerType, Side, XYWH } from "@/types";
+
 import { memo } from "react";
+
+import { useSelectionBounds } from "@/hooks/use-selection-bounds";
+import { useSelf, useStorage } from "@liveblocks/react/suspense";
 
 const HANDLE_WIDTH = 8;
 

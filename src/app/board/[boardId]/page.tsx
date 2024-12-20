@@ -1,9 +1,10 @@
 "use client";
 
 import { Room } from "@/components/room";
+import { LiveblocksProvider } from "@liveblocks/react";
+
 import { Canvas } from "@/features/canvas/components/canvas";
 import { RoomLoading } from "@/features/canvas/components/room-loading";
-import { LiveblocksProvider } from "@liveblocks/react";
 
 type Props = {
     params: {

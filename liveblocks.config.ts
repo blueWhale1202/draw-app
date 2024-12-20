@@ -1,4 +1,4 @@
-import { Color, Layer, Point } from "@/types/canvas";
+import { Color, Layer, Point } from "@/types";
 import { LiveList, LiveMap, LiveObject } from "@liveblocks/client";
 
 declare global {

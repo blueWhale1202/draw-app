@@ -1,4 +1,5 @@
-import { Layer, XYWH } from "@/types/canvas";
+import { Layer, XYWH } from "@/types";
+
 import { shallow } from "@liveblocks/client";
 import { useSelf, useStorage } from "@liveblocks/react/suspense";
 

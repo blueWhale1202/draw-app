@@ -1,6 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { CanvasMode, CanvasState, LayerType } from "@/types/canvas";
+import { CanvasMode, CanvasState, LayerType } from "@/types";
 import {
     Circle,
     MousePointer2,

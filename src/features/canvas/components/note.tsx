@@ -1,12 +1,15 @@
+import { NoteLayer } from "@/types";
+
+import { useMutation } from "@liveblocks/react/suspense";
+import { Kalam } from "next/font/google";
+
 import {
     calculateFontSize,
     cn,
     colorToCss,
     getContrastingTextColor,
 } from "@/lib/utils";
-import { NoteLayer } from "@/types/canvas";
-import { useMutation } from "@liveblocks/react/suspense";
-import { Kalam } from "next/font/google";
+
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
 
 const font = Kalam({
