@@ -1,3 +1,7 @@
+import { Id } from "../../../../convex/_generated/dataModel";
+
+import { useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import {
     Dialog,
@@ -9,11 +13,11 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+
 import { useRenameModal } from "@/stores/use-rename-modal";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
-import { Id } from "../../../../convex/_generated/dataModel";
 import { useUpdateBoard } from "../api/use-update-board";
+
+import { toast } from "sonner";
 
 export const RenameModal = () => {
     const { isOpen, initialValues, onClose } = useRenameModal();

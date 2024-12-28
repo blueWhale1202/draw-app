@@ -1,9 +1,10 @@
 "use client";
 
 import { Layer } from "@/types";
+import { ReactNode } from "react";
+
 import { LiveList, LiveMap, LiveObject } from "@liveblocks/client";
 import { ClientSideSuspense, RoomProvider } from "@liveblocks/react";
-import { ReactNode } from "react";
 
 type Props = {
     children: ReactNode;

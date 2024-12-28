@@ -1,5 +1,9 @@
 "use client";
 
+import { Id } from "../../convex/_generated/dataModel";
+
+import Link from "next/link";
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -7,13 +11,14 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { Gem, Link2Icon, Pencil, Trash } from "lucide-react";
+
 import { useRemoveBoard } from "@/features/boards/api/use-remove-board";
 import { useConfirm } from "@/hooks/use-confirm";
 import { useRenameModal } from "@/stores/use-rename-modal";
-import { Gem, Link2Icon, Pencil, Trash } from "lucide-react";
-import Link from "next/link";
+
 import { toast } from "sonner";
-import { Id } from "../../convex/_generated/dataModel";
 
 type Props = {
     id: string;

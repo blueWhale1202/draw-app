@@ -1,7 +1,7 @@
 const config = {
     providers: [
         {
-            domain: "https://first-mammoth-52.clerk.accounts.dev",
+            domain: process.env.CLERK_JWT_ISSUER_DOMAIN!,
             applicationID: "convex",
         },
     ],
