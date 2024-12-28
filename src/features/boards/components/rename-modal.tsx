@@ -1,3 +1,5 @@
+"use client";
+
 import { Id } from "../../../../convex/_generated/dataModel";
 
 import { useEffect, useState } from "react";
@@ -14,7 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { useRenameModal } from "@/stores/use-rename-modal";
+import { useRenameModal } from "@/hooks/use-rename-modal";
 import { useUpdateBoard } from "../api/use-update-board";
 
 import { toast } from "sonner";

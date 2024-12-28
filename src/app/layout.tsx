@@ -5,9 +5,11 @@ import { Suspense } from "react";
 import "./globals.css";
 
 import { Loading } from "@/components/loading";
-import { Modals } from "@/components/modals";
 import { Toaster } from "@/components/ui/sonner";
+
+import { Modals } from "@/components/modals";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -66,9 +68,11 @@ export default function RootLayout({
             <body>
                 <Suspense fallback={<Loading />}>
                     <ConvexClientProvider>
-                        {children}
+                        <NuqsAdapter>
+                            {children}
+                            <Modals />
+                        </NuqsAdapter>
                         <Toaster theme="light" richColors />
-                        <Modals />
                     </ConvexClientProvider>
                 </Suspense>
             </body>

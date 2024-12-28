@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
 import { useGetBoard } from "@/features/boards/api/use-get-board";
-import { useRenameModal } from "@/stores/use-rename-modal";
+import { useRenameModal } from "@/hooks/use-rename-modal";
 
 type Props = {
     boardId: string;
