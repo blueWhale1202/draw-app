@@ -16,7 +16,7 @@ import { Gem, Link2Icon, Pencil, Trash } from "lucide-react";
 
 import { useRemoveBoard } from "@/features/boards/api/use-remove-board";
 import { useConfirm } from "@/hooks/use-confirm";
-import { useRenameModal } from "@/stores/use-rename-modal";
+import { useRenameModal } from "@/hooks/use-rename-modal";
 
 import { toast } from "sonner";
 
